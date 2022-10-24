@@ -1,0 +1,76 @@
+Задача 1
+def func1():
+    var = int(input("Введите число:"))
+    a = list(str(var))
+    b = 0
+    for i in range(len(a)//2):
+        if a[i] == a[-i-1]:
+            b += 1
+    if b == len(a)//2:
+        print('True')
+        return True
+    else:
+        print('False')
+        return False
+func1()
+
+
+Задача 2 
+def func2():
+    full_list = list(map(int, input().split()))
+    spisok1 = []
+    spisok2 = []
+    spisok3 = []
+    for i in range(len(full_list)):
+        if full_list[i] % 2 == 0:
+            spisok1.append(full_list[i])
+        if full_list[i] % 3 == 0:
+            spisok2.append(full_list[i])
+        if full_list[i] % 5 == 0:
+            spisok3.append(full_list[i])
+    return spisok1, spisok2, spisok3
+print(func2())
+
+
+
+Задача 3 
+def func3():
+    temp = int(input())
+    spisok_temp = list(str(abs(temp)))
+    temp_output = []
+    for i in range(len(spisok_temp)-1, -1, -1):
+        temp_output.append(spisok_temp[i])
+    if temp > 0:
+        return int("".join(map(str, temp_output)))
+    else:
+        return -int("".join(map(str, temp_output)))
+print(func3())
+
+
+
+Задача 4
+def func4():
+    var = int(input())
+    temp = 0
+    pribl = var / 2
+    a = (pribl + var / pribl) / 2
+    while a != pribl:
+        pribl = a
+        a = (pribl + var / pribl) / 2
+        temp += 1
+    return pribl
+print(func4())
+
+Задача 5
+def func5():
+    a = int(input())
+    b = 0
+    for index in range(1, a+1):
+        if a % index == 0:
+            b = b + 1
+    if b == 2:
+        return True
+    else:
+        return False
+    
+print(func5())
